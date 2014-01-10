@@ -1,0 +1,20 @@
+{
+  "name": "tarot-counter-frontend",
+  "version": "0.0.0",
+  "author": "Romain Brochot <rbrochot@yahoo.fr>",
+  "description": "Tarot score counter in Node.js with HTML5 frontend",
+  "contributors": [ 
+    {
+      "name": "Romain Brochot",
+      "email": "rbrochot@yahoo.fr"
+    } 
+  ],
+  "keywords": [
+    "tarot"
+  ],
+  "dependencies" : {
+  	"jquery": "latest",
+  	"bootstrap": "latest",
+    "less.js": "latest"
+  }
+}

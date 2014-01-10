@@ -1,0 +1,32 @@
+{
+  "name": "tarot-counter",
+  "version": "0.0.0",
+  "author": "Romain Brochot <rbrochot@yahoo.fr>",
+  "description": "Tarot score counter in Node.js with HTML5 frontend",
+  "contributors": [
+    {
+      "name": "Romain Brochot",
+      "email": "rbrochot@yahoo.fr"
+    }
+  ],
+  "scripts": {
+    "start": "node ./server/server.js",
+    "predeploy": "./predeploy.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Darkblade2522/TarotCounter.git"
+  },
+  "keywords": [
+    "tarot"
+  ],
+  "dependencies": {
+    "express": "latest",
+    "socket.io": "~0.9.16",
+    "bower": "~1.2.8"
+  },
+  "license": "GPL V2",
+  "engines": {
+    "node": ">=0.6"
+  }
+}
