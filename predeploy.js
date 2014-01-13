@@ -25,8 +25,10 @@
 	var fs = require("fs");
 	if (fs.existsSync("server/bdd.sqlite")){
 		console.log("Database exists");
-		return;
 	}
-	console.log("Database doesn't exist, creating database...");
+	else{
+		console.log("Database doesn't exist, creating database...");
+		var dbModel = require("./server/model.js").createDatabase();
+	}
 
 })();

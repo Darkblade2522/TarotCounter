@@ -20,6 +20,11 @@
 					console.log("Received new player: " + data);
 					addPlayer(data);
 				});
+				socket.on('list_players', function(data) {
+					console.log("Received list players.");
+					for (var i in data)
+						addPlayer(data[i]);
+				});
 				
 				$('#formAddPlayer').submit(function () {
 					var pseudo = $('#formPseudo').val();

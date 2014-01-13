@@ -23,7 +23,8 @@
   "dependencies": {
     "express": "latest",
     "socket.io": "~0.9.16",
-    "bower": "~1.2.8"
+    "bower": "~1.2.8",
+    "sqlite3": "~2.1.19"
   },
   "license": "GPL V2",
   "engines": {

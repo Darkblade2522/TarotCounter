@@ -11,7 +11,7 @@ function getStringTime(){
 
 
 /*=========================
-===== Server ressources statiques
+===== Serveur ressources statiques
 ============================ */
 var express = require('express');
 var ressourcesApp = express();
@@ -30,7 +30,7 @@ ressourcesApp.listen(3000);
 
 
 /*=========================
-===== Server socket.io
+===== Serveur socket.io
 ============================ */
 //=> Pur socket.io, sur un port différent
 
@@ -40,18 +40,19 @@ var socketApp = express();
 var server = require('http').createServer(socketApp);
 var io = require('socket.io').listen(server);
 var fs = require('fs');
+var model = require('./model.js');
 
 io.sockets.on('connection', function (socket) {
 	console.log("["+ getStringTime() +"] New connection!");
 	
 	//Send players list on connection
-	for (var i in players){
-		socket.emit('new_player', players[i]);
-	}
+	var players = model.getPlayers(function(players){
+		socket.emit('list_players', players);
+	});
 	
     socket.on('new_player', function(pseudo) {
     	console.log("Received new player...");
-       	players.push(pseudo);
+       	model.addPlayer(pseudo);
         socket.emit('new_player', pseudo); 				//Send to sender
         socket.broadcast.emit('new_player', pseudo);	//Broadcast to everyone else
     });
